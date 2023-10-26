@@ -1,3 +1,7 @@
 from django.test import TestCase
 
-# Create your tests here.
+
+class lettingsTests(TestCase):
+    def test_lettings_index(self):
+        response = self.client.get("/lettings/")
+        self.assertEqual(response.status_code, 200)
