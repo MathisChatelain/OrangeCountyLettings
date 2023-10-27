@@ -20,7 +20,11 @@ def lettings_index(request):
 
 
 def letting(request, letting_id):
-    """Letting view, show a letting details"""
+    """
+    Letting view, show a letting details
+
+    params: letting_id (int)
+    """
 
     letting = Letting.objects.get(id=letting_id)
     context = {
@@ -39,20 +43,12 @@ def profiles_index(request):
 
 
 def profile(request, username):
-    """Profile view, show a profile details"""
+    """
+    Profile view, show a profile details
+
+    params: username (str)
+    """
 
     profile = Profile.objects.get(user__username=username)
     context = {"profile": profile}
     return render(request, "profiles/profile.html", context)
-
-
-def custom_404_view(request):
-    """Custom 404 view"""
-
-    return render(request, "errors/404.html", status=404)
-
-
-def custom_500_view(request):
-    """Custom 500 view"""
-
-    return render(request, "errors/500.html", status=500)
