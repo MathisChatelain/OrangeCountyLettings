@@ -53,6 +53,20 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 - `source venv/bin/activate`
 - `pytest`
 
+Test coverage run :
+coverage run -m pytest .
+coverage report
+
+Test coverage gutters :
+in VSCode with extension coverage gutters you can show test coverage directly in the code
+after generating a coverage.xml file with : 
+    
+```bash
+    python -m pytest --cov=. --cov-report=xml .
+```
+   
+using this shortcut -> ctrl + shit + è
+
 #### Base de données
 
 - `cd /path/to/Python-OC-Lettings-FR`

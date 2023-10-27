@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+from django.utils.translation import gettext_lazy as _
+
 
 class Profile(models.Model):
     """
@@ -13,6 +15,8 @@ class Profile(models.Model):
 
     class Meta:
         db_table = "oc_lettings_site_profile"
+        verbose_name = _("Profile")
+        verbose_name_plural = _("Profiles")
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     favorite_city = models.CharField(max_length=64, blank=True)

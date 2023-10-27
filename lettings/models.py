@@ -1,6 +1,8 @@
 from django.core.validators import MaxValueValidator, MinLengthValidator
 from django.db import models
 
+from django.utils.translation import gettext_lazy as _
+
 
 class Address(models.Model):
     """
@@ -16,6 +18,8 @@ class Address(models.Model):
         """
 
         db_table = "oc_lettings_site_address"
+        verbose_name = _("Address")
+        verbose_name_plural = _("Addresses")
 
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
     street = models.CharField(max_length=64)
@@ -39,6 +43,8 @@ class Letting(models.Model):
         """
 
         db_table = "oc_lettings_site_letting"
+        verbose_name = _("Letting")
+        verbose_name_plural = _("Lettings")
 
     title = models.CharField(max_length=256)
     address = models.OneToOneField(Address, on_delete=models.CASCADE)
