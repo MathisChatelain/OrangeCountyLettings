@@ -12,7 +12,7 @@ jobs:
           command: cd P13 && pip install -r requirements.txt
       - run:
           name: "Run Tests"
-          command: cd P13 && pytest . --settings=oc-lettings-site.test_settings
+          command: cd P13 && pytest .
       - run:
           name: "Deploy"
           command: curl -X GET https://api.render.com/deploy/srv-cl2c1p2l7jac73fd2b9g?key=-5w9y6O0aS8
