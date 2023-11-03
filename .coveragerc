@@ -2,3 +2,8 @@
 omit =
     */tests/*
     */test_*.py
+    */migrations/*
+    lintall.py
+    manage.py
+    settings.py
+
