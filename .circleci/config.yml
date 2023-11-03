@@ -2,17 +2,17 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:2.7.14
+      - image: circleci/python:3.10.11
     steps:
       - run:
           name: "Clone Repo"
-          command: git clone https://github.com/MathisChatelain/P13.git
+          command: git clone https://github.com/MathisChatelain/P13.git | cd P13
       - run:
           name: "Install Dependencies"
-          command: ./pip install -r requirements.txt
+          command: pip install -r requirements.txt
       - run:
           name: "Run Tests"
-          command: ./pytest .
+          command: pytest .
       - run:
           name: "Deploy"
           command: curl -X GET https://api.render.com/deploy/srv-cl2c1p2l7jac73fd2b9g?key=-5w9y6O0aS8
