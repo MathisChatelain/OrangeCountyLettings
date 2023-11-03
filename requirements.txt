@@ -26,3 +26,4 @@ sqlparse==0.4.4
 tomli==2.0.1
 typing_extensions==4.8.0
 gunicorn==21.2.0
+whitenoise==6.6.0
