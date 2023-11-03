@@ -3,13 +3,12 @@ jobs:
   build:
     docker:
       - image: circleci/python:2.7.14
-        environment:
-          FLASK_CONFIG: testing
     steps:
       - checkout
       - run:
           name: Run Tests
           command: |
             pytest .
-      - setup_remote_docker:
-          docker_layer_caching: true
+      - run:
+          name: "Deploy"
+          command: curl -X GET https://api.render.com/deploy/srv-cl2c1p2l7jac73fd2b9g?key=-5w9y6O0aS8
