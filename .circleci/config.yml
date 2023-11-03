@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:2.7.14
+        environment:
+          FLASK_CONFIG: testing
+    steps:
+      - checkout
+      - run:
+          name: Run Tests
+          command: |
+            pytest .
+      - setup_remote_docker:
+          docker_layer_caching: true
