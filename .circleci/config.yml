@@ -11,9 +11,6 @@ jobs:
           name: "Install Dependencies"
           command: cd P13 && pip install -r requirements.txt
       - run:
-          name: "Prepare project"
-          command: cd P13 && python manage.py collectstatic --noinput
-      - run:
           name: "Run Tests"
           command: cd P13 && pytest . --settings=oc-lettings-site.test_settings
       - run:
