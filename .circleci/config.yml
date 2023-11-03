@@ -11,6 +11,9 @@ jobs:
           name: "Install Dependencies"
           command: cd P13 && pip install -r requirements.txt
       - run:
+          name: "Prepare project"
+          command: cd P13 && python manage.py migrate && python manage.py collectstatic
+      - run:
           name: "Run Tests"
           command: cd P13 && pytest .
       - run:
