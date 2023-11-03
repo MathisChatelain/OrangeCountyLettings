@@ -6,14 +6,13 @@ jobs:
     steps:
       - run:
           name: "Clone Repo"
-          command: git clone https://github.com/MathisChatelain/P13.git | ls
+          command: git clone https://github.com/MathisChatelain/P13.git
       - run:
           name: "Install Dependencies"
-          command: pip install -r requirements.txt
+          command: ./pip install -r requirements.txt
       - run:
           name: "Run Tests"
-          command: |
-            pytest .
+          command: ./pytest .
       - run:
           name: "Deploy"
           command: curl -X GET https://api.render.com/deploy/srv-cl2c1p2l7jac73fd2b9g?key=-5w9y6O0aS8
