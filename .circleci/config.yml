@@ -8,7 +8,10 @@ jobs:
           name: "Clone Repo"
           command: git clone https://github.com/MathisChatelain/P13.git
       - run:
-          name: Run Tests
+          name: "Install Dependencies"
+          command: pip install -r requirements.txt
+      - run:
+          name: "Run Tests"
           command: |
             pytest .
       - run:
