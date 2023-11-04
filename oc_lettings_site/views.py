@@ -2,7 +2,6 @@ from django.shortcuts import render
 
 from lettings.models import Letting
 from profiles.models import Profile
-from django.shortcuts import render
 
 
 def index(request):

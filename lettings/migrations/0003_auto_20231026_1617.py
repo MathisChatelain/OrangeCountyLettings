@@ -4,18 +4,17 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('lettings', '0002_auto_20231026_1614'),
+        ("lettings", "0002_auto_20231026_1614"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='address',
-            options={'verbose_name': 'Address', 'verbose_name_plural': 'Addresses'},
+            name="address",
+            options={"verbose_name": "Address", "verbose_name_plural": "Addresses"},
         ),
         migrations.AlterModelOptions(
-            name='letting',
-            options={'verbose_name': 'Letting', 'verbose_name_plural': 'Lettings'},
+            name="letting",
+            options={"verbose_name": "Letting", "verbose_name_plural": "Lettings"},
         ),
     ]

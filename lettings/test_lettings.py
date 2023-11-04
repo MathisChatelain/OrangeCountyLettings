@@ -1,6 +1,7 @@
-from lettings.models import Letting, Address
-from django.urls import reverse
 import pytest
+from django.urls import reverse
+
+from lettings.models import Letting
 
 
 @pytest.mark.django_db
